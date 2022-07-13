@@ -1,0 +1,263 @@
+/* 
+
+###### DESIGN SETTINGS ######
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font Sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font Weights:
+ Default: 400
+ Medium: 500
+ Semi-bold: 600
+ Bold: 700
+
+- Line Heights:
+ Very Small: 0.9
+ Default: 1
+ Small: 1.05
+ Medium: 1.2
+ Paragraph default: 1.6
+ Large: 1.8
+
+- Letter Spacing:
+ -0.5px
+ 0.75px
+
+--- 02 COLORS
+
+- Primary: 
+ #373737
+ 
+- Tints:
+#4b4b4b
+#737373
+#afafaf
+#d7d7d7
+#ebebeb
+#f9f9f9
+rgba(255, 255, 255, 0.97)
+
+- Greys:
+ #fff 
+ #646464
+ #222
+ #000 
+
+--- 03 SHADOWS:
+ 0 0.3rem 2rem rgba(0, 0, 0, 0.35)
+ 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03)
+ 0 2.4rem 4.8rem rgba(0, 0, 0, 0.08)
+
+--- 04 BORDER RADIUS:
+ 2px
+ 8px
+
+--- 05 WHITE SPACE:
+
+- Spacing System (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Highlight were the cursor is, for accessibility */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0 2rem rgba(55, 55, 55, 0.555);
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #222;
+}
+
+/*****************************/
+/* GENERAL REUSABLE COMPONENTS */
+/*****************************/
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.container--sm {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+/* REUSABLE GRID */
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  align-items: baseline;
+}
+
+.grid--footer {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  align-items: center;
+}
+
+.grid-row-sm {
+  column-gap: 3.2rem;
+  row-gap: 4.8rem;
+}
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4.8rem;
+  justify-items: center;
+}
+
+/* HEADINGS */
+.heading-prime,
+.heading-second,
+.heading-third {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.heading-prime {
+  color: #f9f9f9;
+  font-size: 5.6rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  color: #222;
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.heading-tertiary {
+  color: #737373;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.sub-heading {
+  display: block;
+  color: #afafaf;
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 0.75px;
+  margin-bottom: 2.4rem;
+}
+
+/* BUTTONS */
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.btn-prime:link,
+.btn-prime:visited {
+  color: #373737;
+  background-color: #f9f9f9;
+}
+.btn-prime:hover,
+.btn-prime:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.btn-sec:link,
+.btn-sec:visited {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-sec:hover,
+.btn-sec:active {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+/* LINKS */
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #737373;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  line-height: 0.9;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.link:hover,
+.link:active {
+  color: #000;
+  border-bottom: 1px solid transparent;
+}
+
+.link-icon:link,
+.link-icon:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #afafaf;
+  padding-bottom: 2px;
+  line-height: 0.9;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.link-icon:hover,
+.link-icon:active {
+  color: #ebebeb;
+}
+
+/* HELPER CLASSES */
+.margin-right-sm {
+  margin-right: 3.2rem !important;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 6.4rem !important;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 2.4rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
